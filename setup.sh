@@ -22,10 +22,10 @@ mkdir -p ~/.config/rofi
 
 
 
-
 echo "Setting configs"
 cp configs/.tmux.conf ~/
 cp configs/.config/i3/config ~/.config/i3/
+cp -r configs/.config/alacritty ~/.config/
 cp configs/.fegbg ~/.fegbg
 
 
@@ -34,6 +34,8 @@ cp configs/.fegbg ~/.fegbg
 tmux source ~/.tmux.conf
 
 
+sudo apt install kali-wallpapers-all
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
 read -p "Reboot now (Y/n)" answer
 
