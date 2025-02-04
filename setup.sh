@@ -19,6 +19,7 @@ echo "Dropping configs..."
 mkdir -p ~/.vpns
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/rofi
+cp configs/.zshrc ~/.zshrc
 cp configs/.tmux.conf ~/
 cp configs/.config/i3/config ~/.config/i3/
 sudo cp configs/i3blocks.conf /etc/i3blocks.conf
@@ -26,6 +27,9 @@ cp -r configs/.config/alacritty ~/.config/
 alacritty migrate
 
 sudo cp configs/.setbg /opt/.setbg && sudo chmod +x ~/.setbg
+
+
+curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sh -s -- --git cantino/mcfly
 
 tmux source ~/.tmux.conf
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
