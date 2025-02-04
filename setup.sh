@@ -7,9 +7,12 @@ sudo bash -c "echo '$(whoami) ALL=(ALL:ALL) NOPASSWD: ALL'  >>  /etc/sudoers"
 echo "Installing dependencies..."
 sudo apt update -y
 sudo apt install --fix-missing
-sudo apt install i3 rofi feh xclip picom -y
+sudo apt install i3 rofi feh xclip picom i3blocks -y
 sudo apt install zsh nvim tmux snapd -y 
-snap install alacritty
+
+sudo systemctl enable snapd && sudo systemctl start snapd
+sudo snap install alacritty
+
 
 echo "Dropping configs..."
 
@@ -18,7 +21,9 @@ mkdir -p ~/.config/i3
 mkdir -p ~/.config/rofi
 cp configs/.tmux.conf ~/
 cp configs/.config/i3/config ~/.config/i3/
+sudo cp configs/i3blocks.conf /etc/i3blocks.conf
 cp -r configs/.config/alacritty ~/.config/
+alacritty migrate
 
 sudo cp configs/.setbg /opt/.setbg && sudo chmod +x ~/.setbg
 
