@@ -29,7 +29,7 @@ alacritty migrate
 sudo cp configs/.setbg /opt/.setbg && sudo chmod +x ~/.setbg
 
 
-curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sh -s -- --git cantino/mcfly
+curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly
 
 tmux source ~/.tmux.conf
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
