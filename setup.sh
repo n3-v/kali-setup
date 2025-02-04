@@ -36,7 +36,7 @@ git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts && mv San-Fra
 sudo fc-cache -f -v
 
 
-echo "session optional pam_exec.so /opt/.setbg" >> /etc/pam.d/common-session
+echo "session optional pam_exec.so /opt/.setbg" | sudo tee -a  /etc/pam.d/common-session
 
 
 read -p "Reboot now (Y/n)" answer
