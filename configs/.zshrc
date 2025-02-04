@@ -1,1 +1,0 @@
-PROMPT='%F{cyan}%n%f@%F{cyan}$(hostname)%f:%F{blue}%~%f $ '
