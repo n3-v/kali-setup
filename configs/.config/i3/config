@@ -193,16 +193,11 @@ bar {
 		colors {
             		focused_workspace #282A3E88 #282A3E88 #FFFFFF
         	}
-		
-		
 }
 
 
 gaps inner 10
 default_border pixel 0
 default_floating_border pixel 0
-exec --no-startup-id picom -CGb
 
-# exec_always --no-startup-id sh ~/.fehbg
-# exec --no-startup-id "feh --bg-scale ~/Pictures/pexels-souvenirpixels-1519088.jpg"
-
+exec_always --no-startup-id compton -b --config ~/.config/compton/compton.conf
