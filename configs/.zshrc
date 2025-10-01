@@ -116,7 +116,7 @@ configure_prompt() {
 # The following block is surrounded by two delimiters.
 # These delimiters must not be modified. Thanks.
 # START KALI CONFIG VARIABLES
-PROMPT_ALTERNATIVE=oneline
+PROMPT_ALTERNATIVE=backtrack
 NEWLINE_BEFORE_PROMPT=yes
 # STOP KALI CONFIG VARIABLES
 
@@ -267,3 +267,10 @@ fi
 
 
 eval "$(mcfly init zsh)"
+
+# GoLang
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$PATH
+export GOPATH=/root/go
+export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin/go
