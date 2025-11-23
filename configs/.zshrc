@@ -266,7 +266,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 
-eval "$(mcfly init zsh)"
+source <(fzf --zsh)
 
 # GoLang
 export GOROOT=/usr/local/go
