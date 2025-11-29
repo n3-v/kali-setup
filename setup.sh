@@ -7,7 +7,7 @@ echo "Installing the basics..."
 sudo apt update -y
 sudo apt install --fix-missing
 
-sudo apt install i3 rofi feh xclip picom i3blocks compton fzf pipx -y
+sudo apt install i3 rofi feh xclip picom i3blocks compton fzf pipx python3 python3-venv -y
 sudo apt install zsh tmux -y 
 
 echo "Installing tools..."
@@ -23,14 +23,18 @@ cd -
 # tmux setup
 tmux source ~/.tmux.conf
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
 export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"
 
 # alacritty setup 
-sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
+sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev  -y
 cargo install alacritty
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 alacritty migrate
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sed -i 's/robbyrussell/lambda/g' ~/.zshrc
 
 echo "Adding fonts..."
 mkdir ~/.fonts
@@ -41,4 +45,5 @@ sudo fc-cache -f -v
 # tools
 pipx ensurepath
 pipx install bloodyAD certipy-ad
+
 
