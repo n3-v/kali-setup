@@ -23,12 +23,11 @@ cd -
 # tmux setup
 tmux source ~/.tmux.conf
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-source ~/.zshrc
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # alacritty setup 
-sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
 cargo install alacritty
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 alacritty migrate
