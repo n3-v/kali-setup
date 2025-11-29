@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Removing password for current user's sudo permisinos..."
+echo "Removing password for current user's sudo perms..."
 sudo bash -c "echo '$(whoami) ALL=(ALL:ALL) NOPASSWD: ALL'  >>  /etc/sudoers"
 
 echo "Installing the basics..."
