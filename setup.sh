@@ -17,12 +17,15 @@ echo "Dropping configs..."
 
 mkdir -p ~/.vpns
 
-cp -r configs/* ~/
+cd configs && cp -r . ~/
+cd -
 
 # tmux setup
 tmux source ~/.tmux.conf
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+source ~/.zshrc
 
 # alacritty setup 
 sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
