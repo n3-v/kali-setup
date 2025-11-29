@@ -200,4 +200,5 @@ gaps inner 10
 default_border pixel 0
 default_floating_border pixel 0
 
+exec --no-startup-id feh --no-fehbg --bg-scale '/opt/wallpaper'
 exec_always --no-startup-id compton -b --config ~/.config/compton/compton.conf
