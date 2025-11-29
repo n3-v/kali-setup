@@ -17,8 +17,6 @@ echo "Dropping configs..."
 
 mkdir -p ~/.vpns
 
-cd configs && cp -r . ~/
-cd -
 
 sudo cp wallpaper.jpg /opt/wallpaper
 
@@ -55,7 +53,11 @@ if [[ "$arch" == "arm"* || "$arch" == "aarch64" ]]; then
 fi
 
 wget https://github.com/espanso/espanso/releases/latest/download/espanso-debian-x11-amd64.deb
-sudo apt install ./espanso-debian-x11-amd64.deb
+sudo dpkg -i ./espanso-debian-x11-amd64.deb
 
 espanso service register
 espanso start
+
+cd configs && cp -r . ~/
+cd -
+

