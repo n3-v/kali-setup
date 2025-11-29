@@ -35,7 +35,7 @@ cargo install alacritty
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 alacritty migrate
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i 's/robbyrussell/lambda/g' ~/.zshrc
 
 echo "Adding fonts..."
@@ -48,4 +48,11 @@ sudo fc-cache -f -v
 pipx ensurepath
 pipx install bloodyAD certipy-ad
 
+arch=$(uname -m)
 
+if [[ "$arch" == "arm"* || "$arch" == "aarch64" ]]; then
+    ./arm-setup.sh
+fi
+
+wget https://github.com/espanso/espanso/releases/latest/download/espanso-debian-x11-amd64.deb
+sudo apt install ./espanso-debian-x11-amd64.deb
