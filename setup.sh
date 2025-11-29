@@ -20,7 +20,7 @@ mkdir -p ~/.vpns
 cd configs && cp -r . ~/
 cd -
 
-cp wallpaper.jpg /opt/wallpaper
+sudo cp wallpaper.jpg /opt/wallpaper
 
 # tmux setup
 tmux source ~/.tmux.conf
