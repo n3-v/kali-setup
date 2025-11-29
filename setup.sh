@@ -7,7 +7,7 @@ echo "Installing the basics..."
 sudo apt update -y
 sudo apt install --fix-missing
 
-sudo apt install i3 rofi feh xclip picom i3blocks -y
+sudo apt install i3 rofi feh xclip picom i3blocks compton fzf pipx -y
 sudo apt install zsh tmux -y 
 
 echo "Installing tools..."
@@ -17,12 +17,12 @@ echo "Dropping configs..."
 
 mkdir -p ~/.vpns
 
-
-cp config/* ~/
-
+cp -r configs/* ~/
 
 # tmux setup
 tmux source ~/.tmux.conf
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # alacritty setup 
 sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
@@ -34,4 +34,9 @@ echo "Adding fonts..."
 mkdir ~/.fonts
 git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts && mv San-Francisco-Pro-Fonts ~/.fonts/
 sudo fc-cache -f -v
+
+
+# tools
+pipx ensurepath
+pipx install bloodyAD certipy-ad
 
