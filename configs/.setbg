@@ -1,4 +1,4 @@
 #!/bin/sh
 
-feh --no-fehbg --bg-scale '/opt/.wallpaper*'
+feh --no-fehbg --bg-scale '/opt/wallpaper'
 

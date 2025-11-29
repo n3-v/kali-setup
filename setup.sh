@@ -17,17 +17,8 @@ echo "Dropping configs..."
 
 mkdir -p ~/.vpns
 
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/rofi
-mkdir -p ~/.config/compton
 
-cp configs/.zshrc ~/.zshrc
-cp configs/.tmux.conf ~/
-
-cp configs/.config/i3/config ~/.config/i3/
-sudo cp configs/i3blocks.conf /etc/i3blocks.conf
-cp -r configs/.config/alacritty ~/.config/
-cp configs/.config/compton/compton.conf ~/.config/compton/compton.conf
+cp config/* ~/
 
 
 # tmux setup
