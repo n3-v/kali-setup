@@ -48,15 +48,15 @@ sudo fc-cache -f -v
 pipx ensurepath
 pipx install bloodyAD certipy-ad
 
-arch=$(uname -m)
+# arch=$(uname -m)
 
-if [[ "$arch" == "arm"* || "$arch" == "aarch64" ]]; then
-    ./arm-setup.sh
-fi
+# if [[ "$arch" == "arm"* || "$arch" == "aarch64" ]]; then
+#     ./arm-setup.sh
+# fi
 
-wget https://github.com/espanso/espanso/releases/latest/download/espanso-debian-x11-amd64.deb
-sudo apt install ./espanso-debian-x11-amd64.deb
+# wget https://github.com/espanso/espanso/releases/latest/download/espanso-debian-x11-amd64.deb
+# sudo apt install ./espanso-debian-x11-amd64.deb -y
 
-espanso service register
-espanso start
+# espanso service register
+# espanso start
 
