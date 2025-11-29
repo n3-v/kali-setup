@@ -10,6 +10,9 @@ global_vars:
       cmd: "cat $HOME/.ssh/id_rsa.pub"
 
 matches:
+  - trigger: ":update"
+    replace: "wget "
+
   - trigger: ":tcp"
     replace: "nmap -p- -sC -sV {{clipboard}} -oA nmap/.tcp"
 
@@ -33,3 +36,4 @@ matches:
 
   - trigger: ":mimikatz"
     replace: .\mimikatz.exe "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "exit"
+  
