@@ -56,3 +56,6 @@ fi
 
 wget https://github.com/espanso/espanso/releases/latest/download/espanso-debian-x11-amd64.deb
 sudo apt install ./espanso-debian-x11-amd64.deb
+
+espanso service register
+espanso start
